@@ -1,0 +1,80 @@
+
+
+ <ion-content>
+ <ion-list>
+ <ion-item>
+   </ion-item>
+  <ion-item ng-repeat="giv in givs| filter:{giv_type:0}" ng-class="fagive_list">
+  <div class="item">
+  <div class="givs_list ">
+  <div class="giv_list_titile">
+    <h2> {{giv.title}} {{giv.giv_type}} </h2>
+  </div>
+  <div class="giv_list_image">
+  <div class=" item-image">
+    <img src="img/test-2.jpg">
+ </div>
+ </div>
+ <div class="giv_list_footer">
+   <div class="giv_date"><span>{{giv.created_at}}</span></div>
+   <p>{{giv.short_description}}
+
+
+<a class="button button-block button-positive" ng-click="addToCart( giv, 2)" ><span class="ng-scope">
+                    Add To Cart
+                </span></a>
+
+
+
+   </p>
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+ </ion-item>
+  </ion-list>
+
+  
+
+
+  <ion-infinite-scroll
+    on-infinite="loadMoreGiv()"
+    distance="1%">
+  </ion-infinite-scroll>
+
+<!-- 
+  <ion-infinite-scroll
+  ng-if="moregivCanBeLoaded()"
+  icon="ion-loading-c"
+  on-infinite="loadMoreGiv()">
+</ion-infinite-scroll> -->
+
+
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
